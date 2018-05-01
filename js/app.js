@@ -8,7 +8,7 @@ let Enemy = function(x, y, speed) {
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
-    this.speed = (Math.random() * 300) + 15;
+    this.speed = (Math.random() * 10) + 5;
 };
 
 // Update the enemy's position, required method for game
@@ -21,6 +21,10 @@ Enemy.prototype.update = function(dt) {
     if (this.x >= 505) {
         this.x = -50;
     }
+    if (this.x < player.x + 75 && this.x + 75 > player.x && this.y < player.y + 70 && this.y + 70 > player.y) {
+         player.x = 200;
+         player.y = 400;
+   }
 };
 
 // Draw the enemy on the screen, required method for game
@@ -51,13 +55,13 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(allowedKeys) {
     var x = event.keyCode;
     if (x == 37) {
-        this.x -= 101;
+        this.x -= 20;
     } else if (x == 38) {
-        this.y -= 83;
+        this.y -= 20;
     } else if (x == 39) {
-        this.x += 101;
+        this.x += 20;
     } else if (x == 40) {
-        this.y += 83;
+        this.y += 20;
     }
     player.update();
 };
