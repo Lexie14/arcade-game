@@ -8,11 +8,12 @@ let Enemy = function(x, y, speed) {
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
-    this.speed = (Math.random() * 10) + 5;
+    this.speed = (Math.random() * 100) + 10;
 };
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
+const lives = document.querySelector('.lives');
 Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
@@ -24,6 +25,10 @@ Enemy.prototype.update = function(dt) {
     if (this.x < player.x + 75 && this.x + 75 > player.x && this.y < player.y + 70 && this.y + 70 > player.y) {
          player.x = 200;
          player.y = 400;
+        $('.lives :last-child').remove();
+        if (lives.childElementCount === 0) {
+          displayLost();
+        }
    }
 };
 
@@ -46,6 +51,11 @@ Player.prototype.update = function() {
     if (this.x < 0) this.x = 0;
     if (this.y > 400) this.y = 400;
     if (this.y < -20) this.y = 400;
+    if (this.y < 0) {
+      this.x = 200;
+      this.y = 400;
+      displayWon();
+    }
 };
 
 Player.prototype.render = function() {
@@ -89,3 +99,12 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+const won = document.querySelector('.won');
+function displayWon() {
+  won.style.display = 'block';
+}
+const lost = document.querySelector('.lost');
+function displayLost() {
+  lost.style.display = 'block';
+}
