@@ -1,15 +1,16 @@
 body {
-    text-align: center;
+	text-align: center;
 }
+
 #modal {
 	display: none;
 	position: fixed;
 	background: white;
 	width: 75%;
 	height: 300px;
-  top: 25%;
-  right: 12%;
-  margin-left: auto;
+	top: 25%;
+	right: 12%;
+	margin-left: auto;
 	padding: 3% 0;
 	vertical-align: baseline;
 	text-align: center;
@@ -30,19 +31,19 @@ body {
 	color: white;
 	cursor: pointer;
 }
+
 .lives {
-  display: inline;
+	display: inline;
 }
+
 #lives {
-  margin-right: auto;
-  margin-left: auto;
-  text-align: left;
-  width: 470px;
-  margin-bottom: -40px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	width: 470px;
+	margin-bottom: -40px;
 }
+
 img {
-margin-bottom: -10px;
-}
-* {
-  /* border: solid black; */
+	margin-bottom: -10px;
 }
