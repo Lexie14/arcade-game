@@ -1,6 +1,31 @@
-frontend-nanodegree-arcade-game
-===============================
+# Arcade Game
+The goal of the game is to move the player as fast as it is possible in order to reach the water.
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Table of Contents
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+* [Start](#start)
+* [Instructions](#instructions)
+* [Compatibility](#contributing)
+* [Dependencies](#contributing)
+* [Contributing](#contributing)
+
+## Start
+In order to play the game, you should clone this repository to your local one and open the index.html file in your browser. Optionally, you can pay it here https://lexie14.github.io/arcade-game/
+
+## Instructions
+
+The main steps of the game are:
+* tab to the browser window to make it active;
+* use arrow keys on your keyboard (left, right, up and down) to move the player;
+* the player has 3 lives (that is 3 attempts to win the game);
+* move player to reach the water zone without collision with the enemies;
+* each collision with the enemy takes away one life and brings player to the initial position;
+
+## Compatibility
+This game works in Chrome and Safari.
+
+## Dependencies
+The project was built using HTML5, CSS3 and JavaScript as well as https://www.w3schools.com/js/default.asp and https://developer.mozilla.org/en-US/docs/Learn/JavaScript and https://stackoverflow.com/
+
+## Contributing
+All the contributions are very welcomed - just make a push request.
