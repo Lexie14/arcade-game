@@ -18,7 +18,7 @@ The main steps of the game are:
 * tab to the browser window to make it active;
 * use arrow keys on your keyboard (left, right, up and down) to move the player;
 * the player has 3 lives (that is 3 attempts to win the game);
-* move player to reach the water zone without collision with the enemies;
+* move the player to reach the water zone without collision with the enemies;
 * each collision with the enemy takes away one life and brings player to the initial position;
 
 ## Compatibility
