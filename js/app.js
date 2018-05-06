@@ -18,9 +18,7 @@ Enemy.prototype.update = function(dt) {
     }
     // Handle collision between the player and enemies
     if (this.x < player.x + 75 && this.x + 75 > player.x && this.y < player.y + 70 && this.y + 70 > player.y) {
-        resetPlayer();
-        // Decrement the number of lives
-        $('.lives :last-child').remove();
+        collision();
         // Actions taken when the player lost all lives (game is lost)
         const lives = document.querySelector('.lives');
         if (lives.childElementCount === 0) {
@@ -66,7 +64,7 @@ Player.prototype.render = function() {
 
 // Move the player via keyboard's arrows
 Player.prototype.handleInput = function(allowedKeys) {
-    var x = event.keyCode;
+    let x = event.keyCode;
     if (x == 37) {
         this.x -= 20;
     } else if (x == 38) {
@@ -103,6 +101,13 @@ const playerMove = function(e) {
 
 document.addEventListener('keyup', playerMove);
 
+// Actions taken after the collision between player and enemies
+function collision() {
+    resetPlayer();
+    // Decrement the number of lives
+    $('.lives :last-child').remove();
+}
+
 // Bring the player to the initial position
 function resetPlayer() {
     player.x = 200;
@@ -117,33 +122,31 @@ function freezeEnemies() {
 }
 
 // Display modal when the player lost
-const lost = document.querySelector('.lost');
-
 function displayLost() {
-    lost.style.display = 'block';
+    $('.lost').toggleClass('open');
 }
 
 // Actions taken when the Restart button is clicked on the modal (lost case)
 const lostRestart = document.querySelector('.lostRestart');
 
 lostRestart.addEventListener('click', function() {
-    lost.style.display = 'none';
+    // Remove class 'open' (as it already exists)
+    $('.lost').toggleClass('open');
     resetPlayer();
     restartGame();
 });
 
 // Display modal when the player won
-const won = document.querySelector('.won');
-
 function displayWon() {
-    won.style.display = 'block';
+    $('.won').toggleClass('open');
 }
 
 // Actions taken when the Restart button is clicked on the modal (won case)
 const wonRestart = document.querySelector('.wonRestart');
 
 wonRestart.addEventListener('click', function() {
-    won.style.display = 'none';
+    // Remove class 'open' (as it already exists)
+    $('.won').toggleClass('open');
     resetPlayer();
     restartGame();
 });

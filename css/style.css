@@ -2,7 +2,7 @@ body {
 	text-align: center;
 }
 
-#modal {
+.modal {
 	display: none;
 	position: fixed;
 	background: white;
@@ -19,6 +19,10 @@ body {
 	border-radius: 10px;
 	border: solid 1px #EBECED;
 	box-shadow: 0 0 35px 0 #737373;
+}
+
+.open {
+	display: block;
 }
 
 .modal-button {
