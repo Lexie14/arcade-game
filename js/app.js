@@ -99,7 +99,7 @@ const playerMove = function(e) {
         40: 'down'
     };
     player.handleInput(allowedKeys[e.keyCode]);
-}
+};
 
 document.addEventListener('keyup', playerMove);
 
@@ -113,7 +113,7 @@ function resetPlayer() {
 function freezeEnemies() {
     allEnemies.forEach(function(enemy) {
         enemy.speed = 0;
-    })
+    });
 }
 
 // Display modal when the player lost
