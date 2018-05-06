@@ -19,12 +19,14 @@ Enemy.prototype.update = function(dt) {
     // Handle collision between the player and enemies
     if (this.x < player.x + 75 && this.x + 75 > player.x && this.y < player.y + 70 && this.y + 70 > player.y) {
         resetPlayer();
+        // Decrement the number of lives
         $('.lives :last-child').remove();
-        // Actions taken when the plays lost all lives (game is lost)
+        // Actions taken when the player lost all lives (game is lost)
         const lives = document.querySelector('.lives');
         if (lives.childElementCount === 0) {
             freezeEnemies();
             displayLost();
+            // Disable the ability to move the player while the game is lost and the modal window is displayed
             document.removeEventListener('keyup', playerMove);
         }
     }
