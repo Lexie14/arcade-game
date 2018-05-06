@@ -1,5 +1,5 @@
 // Enemy class
-let Enemy = function(x, y, speed) {
+const Enemy = function(x, y, speed) {
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
@@ -39,7 +39,7 @@ Enemy.prototype.render = function() {
 
 // Player class
 // Player's constructor function
-let Player = function(x, y) {
+const Player = function(x, y) {
     this.sprite = 'images/char-boy.png';
     this.x = x;
     this.y = y;
